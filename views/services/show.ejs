@@ -1,7 +1,7 @@
 <%- include("../partials/header.ejs"); %>
 
 <div class="section section-header">
-    <div class="ad-page parallax filter filter-color-black">
+    <div class="da-page parallax filter filter-color-black">
         <div class="headerFilter">
         <div class="image"
             style="background-image: url('/img/header-1.jpg'); background-size: auto;">
@@ -19,15 +19,15 @@
             <div class="col-md-9">
                 <div class="fac-card">
                     <article class="blog-grid-itm__text">
-                        <div class="card-info ad-card-title">
-                            <p class="ad-text-title"><%= service.title %></p>
+                        <div class="card-info da-card-title">
+                            <p class="da-text-title"><%= service.title %></p>
                         </div>
-                        <div class="ad-cover">
+                        <div class="da-cover">
                             <img src="<%= service.photos[0].src %>">
                         </div>
-                        <div class="card-info ad-card-info">
+                        <div class="card-info da-card-info">
                             <div class="info-desc">
-                                <p class="ad-text-title">Service offer description</p>
+                                <p class="da-text-title">Service offer description</p>
                                 <span>
                                     <span>STARTING AT</span>
                                     <span class="price-ads">€ <%= service.hourlyRate %>/h</span>
@@ -36,7 +36,7 @@
                             <div class="">
                                 <p><%= service.about %></p>
                             </div>
-                            <p class="ad-text-title">About seller</p>
+                            <p class="da-text-title">About seller</p>
 
                             <% if (user && service.author.id.equals(user._id)) { %>
                             <div style="display: flex; justify-content: flex-end; align-items: center;">
@@ -49,13 +49,13 @@
                             <% } %>
 
                             <hr>
-                            <div class="ad-article-info">
+                            <div class="da-article-info">
                                 <a href="/user/profile/<%= service.author.id._id %>">
                                     <img src="<%= service.author.id.photo %>">
                                     <span><%= service.author.id.email %></span>
                                     <!-- <span>-</span> -->
                                     <!-- <span>Grafician caramida</span> -->
-                                    <span class="ad-rating">
+                                    <span class="da-rating">
                                         <i class="fas fa-star"></i>
                                         <span>3.5/5</span>
                                     </span>
@@ -68,7 +68,7 @@
             <div class="col-md-3">
                 <div class="fac-card">
                     <article class="blog-grid-itm__text">
-                        <div class="ad-promo">
+                        <div class="da-promo">
                             <p>Promoted ads</p>
                         </div>
                     </article>
@@ -90,7 +90,7 @@
                                         <img src="<%= service.author.id.photo %>">
                                         <span><%= service.author.name %></span>
                                     </a>
-                                    <span class="ad-rating">
+                                    <span class="da-rating">
                                         <i class="fas fa-star"></i>
                                         <span>3.5/5</span>
                                     </span>
@@ -145,7 +145,7 @@
                             <img src="<%= service.author.id.photo %>">
                             <span><%= service.author.name %></span>
                         </a>
-                        <span class="ad-rating">
+                        <span class="da-rating">
                             <i class="fas fa-star"></i>
                             <span>3.5/5</span>
                         </span>

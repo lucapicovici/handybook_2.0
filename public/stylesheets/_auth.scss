@@ -1,0 +1,64 @@
+.input-field {
+    max-width: 380px;
+    width: 100%;
+    background-color: #fff;
+    margin: 20px auto;
+    height: 55px;
+    border-radius: 4px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0 0.4rem;
+    position: relative;
+    i {
+        text-align: center;
+        line-height: 55px;
+        color: #acacac;
+        transition: 0.5s;
+        font-size: 1.1rem;
+    } input {
+        background: none;
+        outline: none;
+        border: none;
+        line-height: 1;
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: #333;
+        &::placeholder {
+            color: #aaa;
+            font-weight: 500;
+        }
+    }
+}
+
+.login-title-area {
+    max-width: 760px;
+    margin: 0 auto;
+    display: block;
+    padding: 0 15px;
+    text-align: center;
+}
+
+.sign-in-form {
+    input[type=submit] {
+        max-width: 380px;
+        width: 100%;
+        &:hover {
+            background: #fff;
+            color: #333;
+        }
+    }
+}
+
+.reg-info {
+    margin-top: 40px;
+    a {
+        background: #1c71c7;
+        border-radius: 20px;
+        padding: 12px;
+        opacity: 1;
+        color: #fff;
+        &:hover {
+            background: #0a66c2;
+        }
+    }
+}

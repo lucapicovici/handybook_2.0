@@ -1,0 +1,66 @@
+<%- include("../partials/header.ejs"); %>
+
+<div class="section section-header">
+    <div class="ad-page parallax filter filter-color-black">
+        <div class="headerFilter">
+        <div class="image"
+            style="background-image: url('/img/header-1.jpg'); background-size: auto;">
+        </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="section">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md">
+                <div class="fac-card">
+                    <article class="blog-grid-itm__text">
+                        <div class="card-info ad-card-title">
+                            <p class="ad-title">Edit your profile</p>
+                        </div>
+                        <div class="card-info ad-card-info">
+
+                            <form action="/user/profile/<%= user._id %>?_method=PUT" method="POST">
+                                <div class="form-group">
+                                  <label for="username">Username</label>
+                                  <input type="text" class="form-control" id="username" name="profile[username]" value="<%= user.username %>" placeholder="Username">
+                                </div>
+                                <div class="form-group">
+                                  <label for="name">Name</label>
+                                  <input type="text" class="form-control" id="name" name="profile[name]" value="<%= user.name %>" placeholder="Name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone</label>
+                                    <input type="text" class="form-control" id="phone" name="profile[phone]" value="<%= user.phone %>" placeholder="Phone">
+                                </div>
+                                <div class="form-group">
+                                    <label for="profession">Profession</label>
+                                    <input type="text" class="form-control" id="profession" name="profile[profession]" value="<%= user.profession %>" placeholder="Profession">
+                                </div>
+                                <div class="form-group">
+                                    <label for="skills">Skills</label>
+                                    <input type="text" class="form-control" id="skills" name="profile[skills]" value="<%= user.skills %>" placeholder="Skills">
+                                </div>
+                                <div class="form-group">
+                                    <label for="photo">Photo</label>
+                                    <input type="text" class="form-control" id="photo" name="profile[photo]" value="<%= user.photo %>" placeholder="Avatar URL">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+
+                        </div>
+                    </article>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+<%- include("../partials/footer.ejs"); %>

@@ -1,0 +1,37 @@
+<%- include("../partials/header.ejs"); %>
+
+<div class="section section-header">
+    <div class="parallax filter filter-color-black">
+        <div class="image"
+            style="background-image: url('/img/header-1.jpg')">
+        </div>
+        <div class="container">
+            <div class="content">
+                <% if (errMsg.length > 0) { %>
+                    <div class="alert alert-danger" role="alert" style="width: 380px; margin: auto;">
+                        <%= errMsg %>
+                    </div>
+                <% } %>
+                <div class="login-title-area">
+                    <h1 class="title-modern">Sign In</h1>
+                    <div class="separator line-separator">♦</div>
+                </div>
+                <form action="/user/login" method="POST" class="sign-in-form">
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="E-mail" name="email">
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Password" name="password">
+                    </div>
+                    <input type="submit" value="Login" class="btn btn-white">
+                </form>
+                <h3 class="reg-info">You don't have an account? <a href="/user/register">Register now!</a></h3>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<%- include("../partials/footer.ejs"); %>

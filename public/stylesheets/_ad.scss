@@ -1,0 +1,106 @@
+.ad-page {
+    height: 30vh !important;
+}
+.fac-card {
+    background-color: white;
+    border-radius: 6px;
+    margin-bottom: 30px;
+    box-shadow: 0 32px 44px -24px rgba(0, 0, 0, 0.23), 0 20px 25px 0px rgba(0, 0, 0, 0.12), 0 15px 10px -10px rgba(0, 0, 0, 0.2);
+    .ad-article-info {
+        margin-top: 30px;
+        a {
+            color: #333 !important;
+            opacity: 1 !important;
+        }
+        img {
+            vertical-align: middle;
+            border-radius: 50%;
+        }
+        span {
+            margin-left: 5px;
+        }
+        .ad-rating {
+            color: #f90;
+        }
+    }
+    .ad-card-info {
+        .info-desc {
+            display: flex;
+            justify-content: space-between;
+            span {
+                .price-ads {
+                    font-weight: bold;
+                    font-size: 20px;
+                }
+            }
+        }
+        hr {
+            border-top: 1px solid #dcdcdc;
+        }
+        padding: 2rem;
+        .ad-rating {
+            float: right;
+            margin-top: 10px;
+        }
+        a {
+            img {
+                width: 50px;
+                height: 50px;
+            }
+            span {
+                font-weight: bold;
+                font-size: 18px;
+            }
+        }
+    }
+    .ad-card-title {
+        padding: 1rem 2rem 0;
+    }
+    .ad-text-title {
+        font-size: 24px;
+        font-weight: bold;
+    }
+    .ad-promo {
+        p {
+            font-weight: bold;
+            text-align: center;
+            font-size: 20px;
+            padding: 12px 0;
+        }
+    }
+    .ad-cover {
+        width: 100%;
+        max-height: 450px;
+        overflow: hidden;
+        img {
+            width: 100%;
+        }
+    }
+}
+.article-bg {
+    height: 150px;
+    overflow: hidden;
+}
+.article-info {
+    display: flex;
+    justify-content: space-between;
+    .ad-rating {
+        margin-top: 5px;
+        color: #f90;
+    }
+}
+.article-content {
+    min-height: 70px;
+}
+
+@media (max-width: 768px) {
+    .fac-card .ad-card-info .ad-rating {
+        margin: 10px;
+        display: block;
+        float: none;
+        text-align: center;
+        span {
+            margin: 0;
+        }
+    }
+}

@@ -1,0 +1,162 @@
+<%- include("./partials/header.ejs"); %>
+
+<div class="section section-header">
+    <div class="parallax filter filter-color-black">
+        <div class="headerFilter">
+        <div class="image"
+            style="background-image: url('/img/header-1.jpg')">
+        </div>
+        </div>
+        <div class="container">
+            <div class="content">
+                <div class="title-area">
+                    <h3>☞ Here expertise and convenience meet ☜</h2>
+                    <h1 class="title-modern">HandyBook</h1>
+                        <p>Let us know how we can help you!</p>
+                    <div class="search-bar">
+                        <form action="#">
+                          <div class="row">
+                            <div class="form-group rightLine col-lg-2  col-sm-2 col-md-2">
+                                <div class="btn-group bootstrap-select listing-categories dropdown">
+                                  <button class="btn dropdown-toggle bs-placeholder btn-default" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span id="locationtext">County</span> </button>
+                                  <ul class="dropdown-menu locationLink" aria-labelledby="dropdownMenu1">
+                                    <li><p>Alba</p></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><p>Cluj</p></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><p>Sibiu</p></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><p>Constanta</p></li>
+                                  </ul>
+                                </div>
+                              </div>
+                            <div class="form-group col-lg-7  col-sm-7 col-md-7">
+                              <input type="search" name="search" placeholder="What services do you seek?">
+                            </div>
+                            <div class="form-group col-lg-3  col-sm-3 col-md-3">
+                              <input type="submit" value="Search" class="submit">
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="title-area">
+                <h2>Promoted ads</h2>
+                <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+        <div class="row">
+
+<!-- AICI IL BAGI IN FOREACH -->
+            <% services.forEach(function(service){ %>
+                <div class="col-md-3">
+                    <div class="card">
+                        <article class="blog-grid-itm__text">
+                            <div class="article-bg">
+                                <a href="/mechanics/<%= service._id %>">
+                                    <img src = <%= service.photos[0].src %>>
+                                </a>
+                            </div>
+                            <div class="card-info">
+                                <div class="article-info">
+                                    <a href="/mechanics/<%= service._id %>">
+                                        <img src="<%= service.author.id.photo %>">
+                                        <span><%= service.author.name %></span>
+                                    </a>
+                                    <span class="ad-rating">
+                                        <i class="fas fa-star"></i>
+                                        <span>3.5/5</span>
+                                    </span>
+                                </div>
+                                <a href="/mechanics/<%= service._id %>">
+                                    <div class="fix-menu-title">
+                                        <h4><%= service.title %></h4>
+                                    </div>
+                                </a>
+                                <div class="article-content">
+                                    <a href="/mechanics/<%= service._id %>">
+                                        <p><%= service.about %></p>
+                                    </a>
+                                </div>
+                                <span class="author-price">€<%= service.hourlyRate %>/h</span>
+                                <% if (service.hourlyRate != "") { %>
+                                    <span class="author-text">STARTING AT</span>
+                                <% } %>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            <% }); %>
+<!-- AICI IL BAGI IN FOREACH -->
+            
+        </div>
+    </div>
+</div>
+
+
+<div class="section" style="padding: 0 0 40px;">
+    <div class="container">
+        <div class="row">
+            <div class="title-area">
+                <h2>See more ads</h2>
+                <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+        <div class="row">
+
+<!-- AICI IL BAGI IN FOREACH -->
+        <% services.forEach(function(service){ %>
+            <div class="col-md-3">
+                <div class="card">
+                    <article class="blog-grid-itm__text">
+                        <div class="article-bg">
+                            <a href="/mechanics/<%= service._id %>">
+                                <img src = <%= service.photos[0].src %>>
+                            </a>
+                        </div>
+                        <div class="card-info">
+                            <div class="article-info">
+                                <a href="/mechanics/<%= service._id %>">
+                                    <img src="<%= service.author.id.photo %>">
+                                    <span><%= service.author.name %></span>
+                                </a>
+                                <span class="ad-rating">
+                                    <i class="fas fa-star"></i>
+                                    <span>3.5/5</span>
+                                </span>
+                            </div>
+                            <a href="/mechanics/<%= service._id %>">
+                                <div class="fix-menu-title">
+                                    <h4><%= service.title %></h4>
+                                </div>
+                            </a>
+                            <div class="article-content">
+                                <a href="/mechanics/<%= service._id %>">
+                                    <p><%= service.about %></p>
+                                </a>
+                            </div>
+                            <span class="author-price">€<%= service.hourlyRate %>/h</span>
+                            <span class="author-text">STARTING AT</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        <% }); %>
+<!-- AICI IL BAGI IN FOREACH -->
+
+        </div>
+    </div>
+</div>
+
+<%- include("./partials/footer.ejs"); %>

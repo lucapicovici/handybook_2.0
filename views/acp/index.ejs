@@ -1,0 +1,39 @@
+<%- include("./partials/header.ejs"); %>
+
+<div class="navbar-name">
+    <a href="#" href="javascript:void(0);" onclick="hideMenu()">
+        <i class="fas fa-bars"></i>
+    </a>
+    <span>Hello, Admin!</span>
+</div>
+<section class="acp-data">
+    <div class="acp-content">
+        <div class="acp-tbl-header">
+            <h3>Dashboard</h3>
+        </div>
+        <div class="acp-container">
+            <table>
+                <tr>
+                    <th>Email</th>
+                    <th>Username</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Profession</th>
+                    <th>Skills</th>
+                </tr>
+                <% users.forEach(function(user){ %>
+                    <tr>
+                        <td><%= user.email %></td>
+                        <td><%= user.username %></td>
+                        <td><%= user.name %></td>
+                        <td><%= user.phone %></td>
+                        <td><%= user.profession %></td>
+                        <td><%= user.skills %></td>
+                    </tr>
+                <% }) %>
+            </table>
+        </div>
+    </div>
+</section>
+
+<%- include("./partials/footer.ejs"); %>

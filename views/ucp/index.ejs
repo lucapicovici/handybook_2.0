@@ -1,0 +1,171 @@
+<%- include("../partials/header.ejs"); %>
+
+<div class="section section-header">
+    <div class="ad-page parallax filter filter-color-black">
+        <div class="image" style="background-image: url('/img/header-1.jpg'); background-size: auto;"></div>
+        <div class="container">
+            <div class="content">
+                <div class="login-title-area">
+                    <h1 class="title-modern">User profile</h1>
+                    <div class="separator line-separator">♦</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container emp-profile">
+    <form method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-img">
+                    <img src="<%= user.photo %>" alt="" />
+                    <div class="file btn btn-lg btn-primary">
+                        <span class="photoBtnChange">Change Photo</span>
+                        <input type="file" name="file" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="profile-head">
+                    <div class="col-md" style="float: right;">
+                        <a href="/user/profile/<%= profileId %>/edit" class="btn btn-primary btn-sm">Edit Profile</a>
+                    </div>
+                        <h3>
+                            <%= user.email %>
+                        </h3>
+                    <h4>
+                        User
+                    </h4>
+                    <p class="proile-rating">
+                        RATING :
+                        <i class="fas fa-star"></i>
+                        <span>3.5/5</span>
+                    </p>
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Reviews</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-work">
+                    <p>
+                        SKILLS
+                    </p>
+                    <span><%= user.skills %></span>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="tab-content profile-tab" id="myTabContent">
+                    <div class="tab-pane fade active in" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Username</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p><%= user.username %></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Name</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p><%= user.name %></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Email</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p><%= user.email %></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Phone</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p><%= user.phone %></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Profession</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p><%= user.profession %></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="reviews">
+                            <!-- <------------- Foreach review -------------->
+                            <div class="row blockquote review-item fix-distance-ucp">
+                                <div class="col-md-3 text-center">
+                                    <img class="rounded-circle reviewer" src="http://standaloneinstaller.com/upload/avatar.png" />
+                                    <div class="caption">
+                                        <small>
+                                            by
+                                            <a href="#joe">Joe</a>
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <h4>My awesome review</h4>
+                                    <div class="ratebox text-center" data-id="0" data-rating="5"></div>
+                                    <p class="review-text">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore ipsa magni obcaecati ipsam libero autem, repudiandae odit asperiores animi quibusdam reprehenderit ut amet alias eos quas, excepturi
+                                        blanditiis fugiat ratione?
+                                    </p>
+                                    <small class="review-date">March 26, 2017</small>
+                                </div>
+                            </div>
+                            <!-- <------------- Foreach review -------------->
+                            <!-- <------------- Input review -------------->
+                            <div class="row blockquote review-item fix-distance-ucp">
+                                <div class="col-md-12">
+                                    <form action="#">
+                                        <label for="fname">Review title</label>
+                                        <br />
+                                        <input type="text" id="review-title" name="review-title" />
+                                        <br />
+                                        <br />
+                                        <label for="lname">Description</label>
+                                        <br />
+                                        <textarea id="description" name="description" rows="4" cols="50"></textarea>
+                                        <br />
+                                        <br />
+                                        <label for="cars">Rating</label>
+                                        <br />
+                                        <select name="rating" id="rating" form="review">
+                                            <br />
+                                            <option value="5">5 Stars</option>
+                                            <option value="4">4 Stars</option>
+                                            <option value="3">3 Stars</option>
+                                            <option value="2">2 Stars</option>
+                                            <option value="1">1 Stars</option>
+                                        </select>
+                                        <br />
+                                        <br />
+                                        <input type="submit" value="Submit" />
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- <------------- Input review -------------->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<%- include("../partials/footer.ejs"); %>

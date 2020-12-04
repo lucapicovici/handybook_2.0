@@ -1,0 +1,66 @@
+<%- include("../partials/header.ejs"); %>
+
+<div class="section section-header">
+    <div class="ad-page parallax filter filter-color-black">
+        <div class="headerFilter">
+        <div class="image"
+            style="background-image: url('/img/header-1.jpg'); background-size: auto;">
+        </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="section">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md">
+                <div class="fac-card">
+                    <article class="blog-grid-itm__text">
+                        <div class="card-info ad-card-title">
+                            <p class="ad-title">Add your service</p>
+                        </div>
+                        <div class="card-info ad-card-info">
+
+                            <form action="/mechanics" method="POST">
+                                <div class="form-group">
+                                  <label for="author">Author name</label>
+                                  <input type="text" class="form-control" id="author" name="service[author]" placeholder="Author name" required>
+                                </div>
+                                <div class="form-group">
+                                  <label for="title">Service title</label>
+                                  <input type="text" class="form-control" id="title" name="service[title]" placeholder="Title" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="about">Describe your service</label>
+                                    <textarea class="form-control" id="about" rows="7" name="service[about]" placeholder="About" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="hourlyRate">Hourly rate in € (optional)</label>
+                                    <input type="number" class="form-control" id="hourlyRate" name="service[hourlyRate]" placeholder="15" 
+                                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                    type = "number"
+                                    maxlength = "3"
+                                    >
+                                </div>
+                                <div class="form-group">
+                                    <label for="photo">Photo</label>
+                                    <input type="text" class="form-control" id="photo" name="service[photo]" placeholder="Photo URL" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                              </form>
+
+                        </div>
+                    </article>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+<%- include("../partials/footer.ejs"); %>

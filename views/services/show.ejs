@@ -1,0 +1,177 @@
+<%- include("../partials/header.ejs"); %>
+
+<div class="section section-header">
+    <div class="ad-page parallax filter filter-color-black">
+        <div class="headerFilter">
+        <div class="image"
+            style="background-image: url('/img/header-1.jpg'); background-size: auto;">
+        </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="section">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-9">
+                <div class="fac-card">
+                    <article class="blog-grid-itm__text">
+                        <div class="card-info ad-card-title">
+                            <p class="ad-text-title"><%= service.title %></p>
+                        </div>
+                        <div class="ad-cover">
+                            <img src="<%= service.photos[0].src %>">
+                        </div>
+                        <div class="card-info ad-card-info">
+                            <div class="info-desc">
+                                <p class="ad-text-title">Service offer description</p>
+                                <span>
+                                    <span>STARTING AT</span>
+                                    <span class="price-ads">€ <%= service.hourlyRate %>/h</span>
+                                </span>
+                            </div>
+                            <div class="">
+                                <p><%= service.about %></p>
+                            </div>
+                            <p class="ad-text-title">About seller</p>
+
+                            <% if (user && service.author.id.equals(user._id)) { %>
+                            <div style="display: flex; justify-content: flex-end; align-items: center;">
+                                <a href="/mechanics/<%= service._id %>/edit" class="btn btn-success" style="height: 40px;">Edit</a>
+    
+                                <form class="delete-form" action="/mechanics/<%= service._id %>?_method=DELETE" method="POST">
+                                    <button class="btn btn-sm btn-danger" style="height: 40px; margin-left: 10px;">Delete</button>
+                                </form>
+                            </div>
+                            <% } %>
+
+                            <hr>
+                            <div class="ad-article-info">
+                                <a href="/user/profile/<%= service.author.id._id %>">
+                                    <img src="<%= service.author.id.photo %>">
+                                    <span><%= service.author.id.email %></span>
+                                    <!-- <span>-</span> -->
+                                    <!-- <span>Grafician caramida</span> -->
+                                    <span class="ad-rating">
+                                        <i class="fas fa-star"></i>
+                                        <span>3.5/5</span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="fac-card">
+                    <article class="blog-grid-itm__text">
+                        <div class="ad-promo">
+                            <p>Promoted ads</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <!-- AICI IL BAGI IN FOREACH LIMITA DE 3 -->
+            <% services.forEach(function(service){ %>
+                <div class="col-md-3">
+                    <div class="card">
+                        <article class="blog-grid-itm__text">
+                            <div class="article-bg">
+                                <a href="/mechanics/<%= service._id %>">
+                                    <img src = <%= service.photos[0].src %>>
+                                </a>
+                            </div>
+                            <div class="card-info">
+                                <div class="article-info">
+                                    <a href="/mechanics/<%= service._id %>">
+                                        <img src="<%= service.author.id.photo %>">
+                                        <span><%= service.author.name %></span>
+                                    </a>
+                                    <span class="ad-rating">
+                                        <i class="fas fa-star"></i>
+                                        <span>3.5/5</span>
+                                    </span>
+                                </div>
+                                <a href="/mechanics/<%= service._id %>">
+                                    <div class="fix-menu-title">
+                                        <h4><%= service.title %></h4>
+                                    </div>
+                                </a>
+                                <div class="article-content">
+                                    <a href="/mechanics/<%= service._id %>">
+                                        <p><%= service.about %></p>
+                                    </a>
+                                </div>
+                                <span class="author-price">€<%= service.hourlyRate %>/h</span>
+                                <span class="author-text">STARTING AT</span>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            <% }); %>
+            <!-- AICI IL BAGI IN FOREACH -->
+      
+            
+        </div>
+    </div>
+</div>
+
+<div class="section" style="padding: 20px 0;">
+    <div class="container">
+        <div class="row">
+            <div class="title-area">
+                <h2>See more ads</h2>
+                <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+        <div class="row">
+
+<!-- AICI IL BAGI IN FOREACH -->
+<% services.forEach(function(service){ %>
+    <div class="col-md-3">
+        <div class="card">
+            <article class="blog-grid-itm__text">
+                <div class="article-bg">
+                    <a href="/mechanics/<%= service._id %>">
+                        <img src = <%= service.photos[0].src %>>
+                    </a>
+                </div>
+                <div class="card-info">
+                    <div class="article-info">
+                        <a href="/mechanics/<%= service._id %>">
+                            <img src="<%= service.author.id.photo %>">
+                            <span><%= service.author.name %></span>
+                        </a>
+                        <span class="ad-rating">
+                            <i class="fas fa-star"></i>
+                            <span>3.5/5</span>
+                        </span>
+                    </div>
+                    <a href="/mechanics/<%= service._id %>">
+                        <div class="fix-menu-title">
+                            <h4><%= service.title %></h4>
+                        </div>
+                    </a>
+                    <div class="article-content">
+                        <a href="/mechanics/<%= service._id %>">
+                            <p><%= service.about %></p>
+                        </a>
+                    </div>
+                    <span class="author-price">€<%= service.hourlyRate %>/h</span>
+                    <span class="author-text">STARTING AT</span>
+                </div>
+            </article>
+        </div>
+    </div>
+<% }); %>
+<!-- AICI IL BAGI IN FOREACH -->
+
+
+        </div>
+    </div>
+</div>
+
+<%- include("../partials/footer.ejs"); %>

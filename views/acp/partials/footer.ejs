@@ -1,0 +1,30 @@
+    
+        <footer>
+            <div class="copyright">
+                <script> document.write(new Date().getFullYear()) </script> © HandyBook by HolyGuns
+            </div>
+        </footer>
+    </section>
+
+    <script>
+        var x = $( ".sidebar" );
+        function hideMenu() {
+            if (x[0].style.display === "inline-block") {
+                x[0].style.display = "none";
+            } else {
+                x[0].style.display = "inline-block";
+            }
+        }
+        function fixMenu(y) {
+            if (y.matches) {
+                x[0].style.display = "none";
+            } else {
+                x[0].style.display = "inline-block";
+            }
+        }
+        var y = window.matchMedia("(max-width: 590px)")
+        fixMenu(y)
+        y.addListener(fixMenu)
+    </script>
+    </body>
+</html>

@@ -22,6 +22,10 @@
                         <div class="card-info ad-card-title">
                             <p class="ad-text-title"><%= service.title %></p>
                         </div>
+                        <div class="card-info">
+                            <p><%= service.category.category %></p>
+                            <p><%= service.county.county %></p>
+                        </div>
                         <div class="ad-cover">
                             <img src="<%= service.photos[0].src %>">
                         </div>
@@ -95,6 +99,8 @@
                                         <span>3.5/5</span>
                                     </span>
                                 </div>
+                                <p><%= service.category.category %></p>
+                                <p><%= service.county.county %></p>
                                 <a href="/mechanics/<%= service._id %>">
                                     <div class="fix-menu-title">
                                         <h4><%= service.title %></h4>
@@ -150,6 +156,8 @@
                             <span>3.5/5</span>
                         </span>
                     </div>
+                    <p><%= service.category.category %></p>
+                    <p><%= service.county.county %></p>
                     <a href="/mechanics/<%= service._id %>">
                         <div class="fix-menu-title">
                             <h4><%= service.title %></h4>

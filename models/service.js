@@ -14,7 +14,9 @@ var serviceSchema = mongoose.Schema({
     ],
     photos: [
         {src: {type: String, required: true}}
-    ]
+    ],
+    category: {type: mongoose.Schema.Types.ObjectId, ref: "Category"},
+    county: {type: mongoose.Schema.Types.ObjectId, ref: "County"}
 });
 
 module.exports = mongoose.model("Service", serviceSchema);

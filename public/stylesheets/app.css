@@ -490,7 +490,7 @@ article a:hover {
   }
 }
 
-.ad-page {
+.da-page {
   height: 30vh !important;
 }
 
@@ -502,33 +502,33 @@ article a:hover {
           box-shadow: 0 32px 44px -24px rgba(0, 0, 0, 0.23), 0 20px 25px 0px rgba(0, 0, 0, 0.12), 0 15px 10px -10px rgba(0, 0, 0, 0.2);
 }
 
-.fac-card .ad-article-info {
+.fac-card .da-article-info {
   margin-top: 30px;
 }
 
-.fac-card .ad-article-info a {
+.fac-card .da-article-info a {
   color: #333 !important;
   opacity: 1 !important;
 }
 
-.fac-card .ad-article-info img {
+.fac-card .da-article-info img {
   vertical-align: middle;
   border-radius: 50%;
 }
 
-.fac-card .ad-article-info span {
+.fac-card .da-article-info span {
   margin-left: 5px;
 }
 
-.fac-card .ad-article-info .ad-rating {
+.fac-card .da-article-info .da-rating {
   color: #f90;
 }
 
-.fac-card .ad-card-info {
+.fac-card .da-card-info {
   padding: 2rem;
 }
 
-.fac-card .ad-card-info .info-desc {
+.fac-card .da-card-info .info-desc {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -537,53 +537,53 @@ article a:hover {
           justify-content: space-between;
 }
 
-.fac-card .ad-card-info .info-desc span .price-ads {
+.fac-card .da-card-info .info-desc span .price-ads {
   font-weight: bold;
   font-size: 20px;
 }
 
-.fac-card .ad-card-info hr {
+.fac-card .da-card-info hr {
   border-top: 1px solid #dcdcdc;
 }
 
-.fac-card .ad-card-info .ad-rating {
+.fac-card .da-card-info .da-rating {
   float: right;
   margin-top: 10px;
 }
 
-.fac-card .ad-card-info a img {
+.fac-card .da-card-info a img {
   width: 50px;
   height: 50px;
 }
 
-.fac-card .ad-card-info a span {
+.fac-card .da-card-info a span {
   font-weight: bold;
   font-size: 18px;
 }
 
-.fac-card .ad-card-title {
+.fac-card .da-card-title {
   padding: 1rem 2rem 0;
 }
 
-.fac-card .ad-text-title {
+.fac-card .da-text-title {
   font-size: 24px;
   font-weight: bold;
 }
 
-.fac-card .ad-promo p {
+.fac-card .da-promo p {
   font-weight: bold;
   text-align: center;
   font-size: 20px;
   padding: 12px 0;
 }
 
-.fac-card .ad-cover {
+.fac-card .da-cover {
   width: 100%;
   max-height: 450px;
   overflow: hidden;
 }
 
-.fac-card .ad-cover img {
+.fac-card .da-cover img {
   width: 100%;
 }
 
@@ -601,7 +601,7 @@ article a:hover {
           justify-content: space-between;
 }
 
-.article-info .ad-rating {
+.article-info .da-rating {
   margin-top: 5px;
   color: #f90;
 }
@@ -611,13 +611,13 @@ article a:hover {
 }
 
 @media (max-width: 768px) {
-  .fac-card .ad-card-info .ad-rating {
+  .fac-card .da-card-info .da-rating {
     margin: 10px;
     display: block;
     float: none;
     text-align: center;
   }
-  .fac-card .ad-card-info .ad-rating span {
+  .fac-card .da-card-info .da-rating span {
     margin: 0;
   }
 }

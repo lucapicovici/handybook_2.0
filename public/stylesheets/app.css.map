@@ -6,7 +6,7 @@
         "_auth.scss",
         "_acp.scss",
         "_landing.scss",
-        "_ad.scss",
+        "_da.scss",
         "_profile.scss"
     ],
     "names": [],

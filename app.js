@@ -10,12 +10,16 @@ var express        = require("express"),
 
 var indexRoutes = require("./routes/index.js"),
     userRoutes  = require("./routes/user.js");
+
+var dbSeeds = require("./seeds.js");
 require("./config/passport.js");
 
 mongoose.set("useNewUrlParser", true);
 mongoose.set("useUnifiedTopology", true);
 var dbUrl = process.env.DATABASEURL || "mongodb://localhost/handybook";
 mongoose.connect(dbUrl);
+
+dbSeeds();
 
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));

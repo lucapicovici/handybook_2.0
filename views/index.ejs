@@ -59,18 +59,18 @@
         <div class="row">
 
 <!-- AICI IL BAGI IN FOREACH -->
-            <% services.forEach(function(service){ %>
+            <% services.slice(0,8).forEach(function(service){ %>
                 <div class="col-md-3">
                     <div class="card">
                         <article class="blog-grid-itm__text">
                             <div class="article-bg">
-                                <a href="/mechanics/<%= service._id %>">
+                                <a href="/services/<%= service._id %>">
                                     <img src = <%= service.photos[0].src %>>
                                 </a>
                             </div>
                             <div class="card-info">
                                 <div class="article-info">
-                                    <a href="/mechanics/<%= service._id %>">
+                                    <a href="/services/<%= service._id %>">
                                         <img src="<%= service.author.id.photo %>">
                                         <span><%= service.author.name %></span>
                                     </a>
@@ -81,13 +81,13 @@
                                 </div>
                                 <p><%= service.category.category %></p>
                                 <p><%= service.county.county %></p>
-                                <a href="/mechanics/<%= service._id %>">
+                                <a href="/services/<%= service._id %>">
                                     <div class="fix-menu-title">
                                         <h4><%= service.title %></h4>
                                     </div>
                                 </a>
                                 <div class="article-content">
-                                    <a href="/mechanics/<%= service._id %>">
+                                    <a href="/services/<%= service._id %>">
                                         <p><%= service.about %></p>
                                     </a>
                                 </div>
@@ -123,13 +123,13 @@
                 <div class="card">
                     <article class="blog-grid-itm__text">
                         <div class="article-bg">
-                            <a href="/mechanics/<%= service._id %>">
+                            <a href="/services/<%= service._id %>">
                                 <img src = <%= service.photos[0].src %>>
                             </a>
                         </div>
                         <div class="card-info">
                             <div class="article-info">
-                                <a href="/mechanics/<%= service._id %>">
+                                <a href="/services/<%= service._id %>">
                                     <img src="<%= service.author.id.photo %>">
                                     <span><%= service.author.name %></span>
                                 </a>
@@ -140,13 +140,13 @@
                             </div>
                             <p><%= service.category.category %></p>
                             <p><%= service.county.county %></p>
-                            <a href="/mechanics/<%= service._id %>">
+                            <a href="/services/<%= service._id %>">
                                 <div class="fix-menu-title">
                                     <h4><%= service.title %></h4>
                                 </div>
                             </a>
                             <div class="article-content">
-                                <a href="/mechanics/<%= service._id %>">
+                                <a href="/services/<%= service._id %>">
                                     <p><%= service.about %></p>
                                 </a>
                             </div>

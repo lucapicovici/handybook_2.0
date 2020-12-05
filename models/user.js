@@ -9,7 +9,7 @@ var userSchema = mongoose.Schema({
     name: {type: String},
     phone: {type: String},
     profession: {type: String},
-    skills: {name: String},
+    skills: {type: String},
     photo: {type: String, default: "https://images.unsplash.com/photo-1605559141066-1549783d18e9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"}
 });
 

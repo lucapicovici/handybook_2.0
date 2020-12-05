@@ -46,9 +46,9 @@
 
                             <% if (user && service.author.id.equals(user._id)) { %>
                             <div style="display: flex; justify-content: flex-end; align-items: center;">
-                                <a href="/mechanics/<%= service._id %>/edit" class="btn btn-success" style="height: 40px;">Edit</a>
+                                <a href="/services/<%= service._id %>/edit" class="btn btn-success" style="height: 40px;">Edit</a>
     
-                                <form class="delete-form" action="/mechanics/<%= service._id %>?_method=DELETE" method="POST">
+                                <form class="delete-form" action="/services/<%= service._id %>?_method=DELETE" method="POST">
                                     <button class="btn btn-sm btn-danger" style="height: 40px; margin-left: 10px;">Delete</button>
                                 </form>
                             </div>
@@ -59,11 +59,9 @@
                                 <a href="/user/profile/<%= service.author.id._id %>">
                                     <img src="<%= service.author.id.photo %>">
                                     <span><%= service.author.id.email %></span>
-                                    <!-- <span>-</span> -->
-                                    <!-- <span>Grafician caramida</span> -->
                                     <span class="da-rating">
                                         <i class="fas fa-star"></i>
-                                        <span>3.5/5</span>
+                                        <span>4.7/5</span>
                                     </span>
                                 </a>
                             </div>
@@ -81,35 +79,35 @@
                 </div>
             </div>
             <!-- AICI IL BAGI IN FOREACH LIMITA DE 3 -->
-            <% services.forEach(function(service){ %>
+            <% services.slice(0,2).forEach(function(service){ %>
                 <div class="col-md-3">
                     <div class="card">
                         <article class="blog-grid-itm__text">
                             <div class="article-bg">
-                                <a href="/mechanics/<%= service._id %>">
+                                <a href="/services/<%= service._id %>">
                                     <img src = <%= service.photos[0].src %>>
                                 </a>
                             </div>
                             <div class="card-info">
                                 <div class="article-info">
-                                    <a href="/mechanics/<%= service._id %>">
+                                    <a href="/services/<%= service._id %>">
                                         <img src="<%= service.author.id.photo %>">
                                         <span><%= service.author.name %></span>
                                     </a>
                                     <span class="da-rating">
                                         <i class="fas fa-star"></i>
-                                        <span>3.5/5</span>
+                                        <span>4.7/5</span>
                                     </span>
                                 </div>
                                 <p><%= service.category.category %></p>
                                 <p><%= service.county.county %></p>
-                                <a href="/mechanics/<%= service._id %>">
+                                <a href="/services/<%= service._id %>">
                                     <div class="fix-menu-title">
                                         <h4><%= service.title %></h4>
                                     </div>
                                 </a>
                                 <div class="article-content">
-                                    <a href="/mechanics/<%= service._id %>">
+                                    <a href="/services/<%= service._id %>">
                                         <p><%= service.about %></p>
                                     </a>
                                 </div>
@@ -140,35 +138,35 @@
         <div class="row">
 
 <!-- AICI IL BAGI IN FOREACH -->
-<% services.forEach(function(service){ %>
+<% services.slice(0,4).forEach(function(service){ %>
     <div class="col-md-3">
         <div class="card">
             <article class="blog-grid-itm__text">
                 <div class="article-bg">
-                    <a href="/mechanics/<%= service._id %>">
+                    <a href="/services/<%= service._id %>">
                         <img src = <%= service.photos[0].src %>>
                     </a>
                 </div>
                 <div class="card-info">
                     <div class="article-info">
-                        <a href="/mechanics/<%= service._id %>">
+                        <a href="/services/<%= service._id %>">
                             <img src="<%= service.author.id.photo %>">
                             <span><%= service.author.name %></span>
                         </a>
                         <span class="da-rating">
                             <i class="fas fa-star"></i>
-                            <span>3.5/5</span>
+                            <span>4.7/5</span>
                         </span>
                     </div>
                     <p><%= service.category.category %></p>
                     <p><%= service.county.county %></p>
-                    <a href="/mechanics/<%= service._id %>">
+                    <a href="/services/<%= service._id %>">
                         <div class="fix-menu-title">
                             <h4><%= service.title %></h4>
                         </div>
                     </a>
                     <div class="article-content">
-                        <a href="/mechanics/<%= service._id %>">
+                        <a href="/services/<%= service._id %>">
                             <p><%= service.about %></p>
                         </a>
                     </div>

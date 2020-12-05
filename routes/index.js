@@ -48,7 +48,7 @@ router.get("/", function(req, res){
 });
 
 // NEW
-router.get("/mechanics/new", isLoggedIn, function(req, res){
+router.get("/services/new", isLoggedIn, function(req, res){
     res.render("services/new");
 });
 
@@ -142,7 +142,7 @@ router.post("/services", isLoggedIn, async function(req, res){
 });
 
 // EDIT
-router.get("/mechanics/:id/edit", isLoggedIn, checkServiceOwnership, function(req, res){
+router.get("/services/:id/edit", isLoggedIn, checkServiceOwnership, function(req, res){
     Service.findById(req.params.id).populate("category county")
         .exec(function(err, service){
             if (err) {
@@ -154,7 +154,7 @@ router.get("/mechanics/:id/edit", isLoggedIn, checkServiceOwnership, function(re
 });
 
 // UPDATE
-router.put("/mechanics/:id", isLoggedIn, checkServiceOwnership, function(req, res){
+router.put("/services/:id", isLoggedIn, checkServiceOwnership, function(req, res){
     var formData = req.body.service;
     var newService = {
         author: {
@@ -170,15 +170,15 @@ router.put("/mechanics/:id", isLoggedIn, checkServiceOwnership, function(req, re
     };
 	Service.findByIdAndUpdate(req.params.id, newService, function(err, service){
 		if (err) {
-			res.redirect("/mechanics");
+			res.redirect("/");
 		} else {
-			res.redirect("/mechanics/" + req.params.id);
+			res.redirect("/services/" + req.params.id);
 		}
 	});
 });
 
 // SHOW
-router.get("/mechanics/:id", function(req, res){
+router.get("/services/:id", function(req, res){
     Service.findById(req.params.id)
         .populate("author.id category county")
         .exec(function(err, service){
@@ -200,16 +200,16 @@ router.get("/mechanics/:id", function(req, res){
 });
 
 // DESTROY
-router.delete("/mechanics/:id", isLoggedIn, checkServiceOwnership, function(req, res){
+router.delete("/services/:id", isLoggedIn, checkServiceOwnership, function(req, res){
 	Service.findByIdAndRemove(req.params.id, function(err, service){
 		if (err) {
-			res.redirect("/mechanics");
+			res.redirect("/services");
 		} else {
 			// Comment.deleteMany({_id: {$in: service.comments}}, function(err){
 			// 	if (err) {
 			// 		console.log(err);
 			// 	}
-			// 	res.redirect("/mechanics");
+			// 	res.redirect("/services");
             // });
             res.redirect("/");
 		}

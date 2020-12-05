@@ -48,6 +48,14 @@
                                     <label for="photo">Photo</label>
                                     <input type="text" class="form-control" id="photo" name="service[photo]" value="<%= service.photos[0].src %>" placeholder="Photo URL" required>
                                 </div>
+                                <div class="form-group">
+                                    <label for="category">Category</label>
+                                    <input type="text" class="form-control" id="category" name="service[category]" value="<%= service.category.category %>" placeholder="Category" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="county">County</label>
+                                    <input type="text" class="form-control" id="county" name="service[county]" value="<%= service.county.county %>" placeholder="County" required>
+                                </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                               </form>
 

@@ -32,10 +32,12 @@
                         <div class="card-info da-card-info">
                             <div class="info-desc">
                                 <p class="da-text-title">Service offer description</p>
-                                <span>
-                                    <span>STARTING AT</span>
-                                    <span class="price-ads">€ <%= service.hourlyRate %>/h</span>
-                                </span>
+                                <% if (service.hourlyRate) { %>
+                                    <span>
+                                        <span>STARTING AT</span>
+                                        <span class="price-ads">€ <%= service.hourlyRate %>/h</span>
+                                    </span>
+                                <% } %>
                             </div>
                             <div class="">
                                 <p><%= service.about %></p>
@@ -111,8 +113,10 @@
                                         <p><%= service.about %></p>
                                     </a>
                                 </div>
-                                <span class="author-price">€<%= service.hourlyRate %>/h</span>
-                                <span class="author-text">STARTING AT</span>
+                                <% if (service.hourlyRate) { %>
+                                    <span class="author-price">€<%= service.hourlyRate %>/h</span>
+                                    <span class="author-text">STARTING AT</span>
+                                <% } %>
                             </div>
                         </article>
                     </div>
@@ -168,8 +172,10 @@
                             <p><%= service.about %></p>
                         </a>
                     </div>
-                    <span class="author-price">€<%= service.hourlyRate %>/h</span>
-                    <span class="author-text">STARTING AT</span>
+                    <% if (service.hourlyRate) { %>
+                        <span class="author-price">€<%= service.hourlyRate %>/h</span>
+                        <span class="author-text">STARTING AT</span>
+                    <% } %>
                 </div>
             </article>
         </div>

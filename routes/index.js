@@ -143,13 +143,14 @@ router.post("/services", isLoggedIn, async function(req, res){
 
 // EDIT
 router.get("/mechanics/:id/edit", isLoggedIn, checkServiceOwnership, function(req, res){
-    Service.findById(req.params.id, function(err, service){
-        if (err) {
-            console.log(err);
-        } else {
-            res.render("services/edit", {service: service});
-        }
-    });
+    Service.findById(req.params.id).populate("category county")
+        .exec(function(err, service){
+            if (err) {
+                console.log(err);
+            } else {
+                res.render("services/edit", {service: service});
+            }
+        });
 });
 
 // UPDATE

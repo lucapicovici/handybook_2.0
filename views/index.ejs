@@ -1,5 +1,39 @@
 <%- include("./partials/header.ejs"); %>
 
+<script>
+    $(function () {
+    var availableTags = [
+        "ActionScript",
+        "AppleScript",
+        "Asp",
+        "BASIC",
+        "C",
+        "C++",
+        "Clojure",
+        "COBOL",
+        "ColdFusion",
+        "Erlang",
+        "Fortran",
+        "Groovy",
+        "Haskell",
+        "Java",
+        "JavaScript",
+        "Lisp",
+        "Perl",
+        "PHP",
+        "Python",
+        "Ruby",
+        "Scala",
+        "Scheme"];
+    $("#tags").autocomplete({
+        maxResults: 6,
+        source: availableTags,
+        minLength: 0
+    }).click(function () {
+        $(this).autocomplete('search')
+    });
+});
+</script>
 <div class="section section-header">
     <div class="parallax filter filter-color-black">
         <div class="headerFilter">
@@ -31,7 +65,7 @@
                                 </div>
                               </div>
                             <div class="form-group col-lg-7  col-sm-7 col-md-7">
-                              <input type="search" name="search" placeholder="What services do you seek?">
+                              <input type="search" name="search" id="tags" placeholder="What services do you seek?">
                             </div>
                             <div class="form-group col-lg-3  col-sm-3 col-md-3">
                               <input type="submit" value="Search" class="submit">

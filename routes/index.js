@@ -24,18 +24,6 @@ router.get("/services/new", isLoggedIn, function(req, res){
     res.render("services/new");
 });
 
-// // CATEGORIES index
-// router.get("/services/categories/index", function(req, res){
-//     Service.find({})
-//     .populate("author.id category county")
-//     .exec(function(err, services){
-//         if (err) {
-//             console.log(err);
-//         } else {
-//             res.render("services/index", {services: services});
-//         }
-//     });
-// });
 
 // CREATE
 router.post("/services", isLoggedIn, async function(req, res){

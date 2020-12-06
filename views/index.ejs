@@ -1,33 +1,14 @@
 <%- include("./partials/header.ejs"); %>
 
 <script>
+    var tempServices = <%- JSON.stringify(services); %>
+    var newArrayServices = tempServices.map((service) => {
+        return service.title;
+    });
     $(function () {
-    var availableTags = [
-        "ActionScript",
-        "AppleScript",
-        "Asp",
-        "BASIC",
-        "C",
-        "C++",
-        "Clojure",
-        "COBOL",
-        "ColdFusion",
-        "Erlang",
-        "Fortran",
-        "Groovy",
-        "Haskell",
-        "Java",
-        "JavaScript",
-        "Lisp",
-        "Perl",
-        "PHP",
-        "Python",
-        "Ruby",
-        "Scala",
-        "Scheme"];
     $("#tags").autocomplete({
         maxResults: 6,
-        source: availableTags,
+        source: newArrayServices,
         minLength: 0
     }).click(function () {
         $(this).autocomplete('search')

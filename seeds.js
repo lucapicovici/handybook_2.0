@@ -149,6 +149,38 @@ var servicesData = [
         ],
         category: "mechanics",
         county: "Timiş"
+    },
+    {
+        author: {
+            id: "",
+            name: "Van Damme"
+        },
+        title: "Car Seller",
+        about: "I will diagnose any issues with your car engine. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mollis lobortis diam a cursus. Etiam ac nibh sem. Nunc at diam posuere, vehicula justo at, sodales sem. Donec lacinia tellus in odio euismod dapibus. Donec ut ultrices tellus. Vestibulum eu ex libero. Etiam magna dui, imperdiet vel quam quis, sollicitudin dictum dolor. Sed rhoncus nec odio eget vehicula. Quisque commodo mi ex, nec condimentum neque pellentesque ac. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque nec fermentum enim. Aliquam eu nisi feugiat, consectetur lorem sollicitudin, ultricies ipsum. Sed hendrerit purus augue, eu accumsan lorem rutrum in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean at fermentum magna, sit amet finibus erat.",
+        hourlyRate: "1",
+        rating: 4.9,
+        comments: [],
+        photos: [
+            {src: "https://images.unsplash.com/photo-1455138183306-12dfce6f541b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=837&q=80"}
+        ],
+        category: "cars",
+        county: "Alba"
+    },
+    {
+        author: {
+            id: "",
+            name: "John K."
+        },
+        title: "Electrician",
+        about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mollis lobortis diam a cursus. Etiam ac nibh sem. Nunc at diam posuere, vehicula justo at, sodales sem. Donec lacinia tellus in odio euismod dapibus. Donec ut ultrices tellus. Vestibulum eu ex libero. Etiam magna dui, imperdiet vel quam quis, sollicitudin dictum dolor. Sed rhoncus nec odio eget vehicula. Quisque commodo mi ex, nec condimentum neque pellentesque ac. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque nec fermentum enim. Aliquam eu nisi feugiat, consectetur lorem sollicitudin, ultricies ipsum. Sed hendrerit purus augue, eu accumsan lorem rutrum in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean at fermentum magna, sit amet finibus erat.",
+        hourlyRate: "59",
+        rating: 5,
+        comments: [],
+        photos: [
+            {src: "https://www.ejobs.ro/misk/personalize/img/1/0/1086135.jpg"}
+        ],
+        category: "electricians",
+        county: "Timiş"
     }
 ];
 
@@ -225,6 +257,29 @@ module.exports = async function seedDB() {
         obj.county = county._id;
         service = await Service.create(obj);
         console.log(`CREATED ${service}`);
+
+        // Service #5
+        obj = servicesData[4];
+        user = await User.findOne({email: "VanDamme@gmail.com"});
+        category = await Category.findOne({category: obj.category});
+        county = await County.findOne({county: obj.county});
+        obj.author.id = user._id;
+        obj.category = category._id;
+        obj.county = county._id;
+        service = await Service.create(obj);
+        console.log(`CREATED ${service}`);
+
+        // Service #6
+        obj = servicesData[5];
+        user = await User.findOne({email: "john@gmail.com"});
+        category = await Category.findOne({category: obj.category});
+        county = await County.findOne({county: obj.county});
+        obj.author.id = user._id;
+        obj.category = category._id;
+        obj.county = county._id;
+        service = await Service.create(obj);
+        console.log(`CREATED ${service}`);
+
 
     } catch(err) {
         console.log(err);

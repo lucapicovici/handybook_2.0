@@ -9,10 +9,10 @@ var Category = require("./models/category.js"),
 
 
 var categoryData = [
-    "Cars",
-    "Mechanics",
-    "Miscellaneous",
-    "Electricians"
+    "cars",
+    "mechanics",
+    "miscellaneous",
+    "electricians"
 ];
 
 var countyData = [
@@ -99,7 +99,7 @@ var servicesData = [
         photos: [
             {src: "https://media.npr.org/assets/img/2013/11/16/split162way-7d52e7a4d01dabf8125780baf381e0d340a74d6c-s1200.jpg"}
         ],
-        category: "Miscellaneous",
+        category: "miscellaneous",
         county: "Cluj"
     },
     {
@@ -115,7 +115,7 @@ var servicesData = [
         photos: [
             {src: "https://images.unsplash.com/photo-1577801343081-0053b24f62c7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80"}
         ],
-        category: "Mechanics",
+        category: "mechanics",
         county: "Cluj"
     },
     {
@@ -131,7 +131,7 @@ var servicesData = [
         photos: [
             {src: "https://images.unsplash.com/photo-1583955275036-fd20a9c185bd?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDR8fG1lY2hhbmljcyUyMHNob3B8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60"}
         ],
-        category: "Mechanics",
+        category: "mechanics",
         county: "Timiş"
     },
     {
@@ -147,7 +147,7 @@ var servicesData = [
         photos: [
             {src: "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8bWVjaGFuaWN8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60"}
         ],
-        category: "Mechanics",
+        category: "mechanics",
         county: "Timiş"
     }
 ];

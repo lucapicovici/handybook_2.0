@@ -2,7 +2,19 @@ var express  = require("express"),
     router   = express.Router(),
     passport = require("passport");
 
-var User = require("../models/user.js");
+var User    = require("../models/user.js"),
+    Service = require("../models/service.js");
+
+router.get("/profile/services", isLoggedIn, function(req, res){
+    Service.find({'author.id': req.user.id})
+        .populate("author.id")
+        .exec(function(err, services){
+            if (err) console.log(err);
+            else {
+                res.render("services/index", {services: services, categoryType: "Your Services"});
+            }
+        });
+});
 
 router.get("/profile/:id", isLoggedIn, function(req, res){
     User.findById(req.params.id, function(err, user){
@@ -25,7 +37,7 @@ router.get("/profile/:id/edit", isLoggedIn, checkProfileOwnership, function(req,
     })
 });
 
-// UPDATE (checkProfileOwnership later)
+// UPDATE
 router.put("/profile/:id", isLoggedIn, checkProfileOwnership, function(req, res){
     var tempPassword = "", tempRating = 0;
     User.findById(req.params.id, function(err, user){

@@ -20,8 +20,15 @@ router.get("/", function(req, res){
 });
 
 // NEW
-router.get("/services/new", isLoggedIn, function(req, res){
-    res.render("services/new");
+router.get("/services/new", isLoggedIn, async function(req, res){
+    try {
+        var categories = await Category.find({});
+        var counties = await County.find({});
+        res.render("services/new", {categories: categories, counties: counties});
+    } catch(err) {
+        console.log(err);
+        res.redirect("/");
+    }
 });
 
 

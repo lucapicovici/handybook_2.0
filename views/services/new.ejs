@@ -72,6 +72,33 @@
 </div>
 
 
+<script>
+    var categoriesArray = <%- JSON.stringify(categories); %>
+    var countiesArray = <%- JSON.stringify(counties); %>
+    categoriesArray = categoriesArray.map((category) => {
+        return category.category;
+    });
+    countiesArray = countiesArray.map((county) => {
+        return county.county;
+    });
+    $(function () {
+        $("#category").autocomplete({
+            source: categoriesArray,
+            minLength: 0
+        }).click(function () {
+            $(this).autocomplete('search');
+        });
+    });
+    $(function () {
+        $("#county").autocomplete({
+            source: countiesArray,
+            minLength: 0
+        }).click(function () {
+            $(this).autocomplete('search');
+        });
+    });
+</script>
+
 
 
 <%- include("../partials/footer.ejs"); %>

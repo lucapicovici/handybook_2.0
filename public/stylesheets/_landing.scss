@@ -206,6 +206,11 @@ article {
         }
     }
 }
+.ui-autocomplete { 
+    max-height: 200px; 
+    overflow-y: scroll; 
+    overflow-x: hidden;
+}
 @media (max-width: 768px) {
     .col-sm-2 {
         width: 20%;

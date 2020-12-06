@@ -7,16 +7,27 @@ var Service  = require("../models/service.js"),
     Category = require("../models/category.js"),
     County   = require("../models/county.js");
 
-router.get("/", function(req, res){
-    Service.find({})
-    .populate("author.id category county")
-    .exec(function(err, services){
-        if (err) {
-            console.log(err);
+router.get("/", async function(req, res){
+    try {
+        var filter = req.query.search;
+        if (filter != "" && filter != undefined) {
+            var services = await Service.find({title: filter}).populate("author.id");
+            res.render("services/index", {services, categoryType: "Results"});
         } else {
-            res.render("index", {services: services});
+            Service.find({})
+            .populate("author.id category county")
+            .exec(function(err, services){
+                if (err) {
+                    console.log(err);
+                } else {
+                    res.render("index", {services: services});
+                }
+            });
         }
-    });
+    } catch(err) {
+        console.log(err);
+        res.redirect("/");
+    }
 });
 
 // NEW
@@ -103,6 +114,8 @@ router.put("/services/:id", isLoggedIn, checkServiceOwnership, function(req, res
 		}
 	});
 });
+
+
 
 router.get("/services/categories", function(req, res){
     res.render("services/categories");

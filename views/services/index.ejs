@@ -1,0 +1,69 @@
+<%- include("../partials/header.ejs"); %>
+
+<div class="section section-header">
+    <div class="da-page parallax filter filter-color-black">
+        <div class="image" style="background-image: url('/img/header-1.jpg'); background-size: auto;"></div>
+        <div class="container">
+            <div class="content">
+                <div class="login-title-area">
+                    <h1 class="title-modern">Numele categoriei</h1>
+                    <div class="separator line-separator">♦</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section" style="padding: 0 0 40px;">
+    <div class="container">
+        <div class="row">
+            <div class="title-area">
+
+            </div>
+        </div>
+        <div class="row">
+
+<!-- AICI IL BAGI IN FOREACH -->
+        <% services.forEach(function(service){ %>
+            <div class="col-md-3">
+                <div class="card">
+                    <article class="blog-grid-itm__text">
+                        <div class="article-bg">
+                            <a href="/services/<%= service._id %>">
+                                <img src = <%= service.photos[0].src %>>
+                            </a>
+                        </div>
+                        <div class="card-info">
+                            <div class="article-info">
+                                <a href="/services/<%= service._id %>">
+                                    <img src="<%= service.author.id.photo %>">
+                                    <span><%= service.author.name %></span>
+                                </a>
+                                <span class="da-rating">
+                                    <i class="fas fa-star"></i>
+                                    <span>3.5/5</span>
+                                </span>
+                            </div>
+                            <a href="/services/<%= service._id %>">
+                                <div class="fix-menu-title">
+                                    <h4><%= service.title %></h4>
+                                </div>
+                            </a>
+                            <div class="article-content">
+                                <a href="/services/<%= service._id %>">
+                                    <p><%= service.about %></p>
+                                </a>
+                            </div>
+                            <span class="author-price">€<%= service.hourlyRate %>/h</span>
+                            <span class="author-text">STARTING AT</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        <% }); %>
+<!-- AICI IL BAGI IN FOREACH -->
+
+        </div>
+    </div>
+</div>
+
+<%- include("../partials/footer.ejs"); %>

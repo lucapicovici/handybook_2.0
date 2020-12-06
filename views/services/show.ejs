@@ -2,15 +2,17 @@
 
 <div class="section section-header">
     <div class="da-page parallax filter filter-color-black">
-        <div class="headerFilter">
-        <div class="image"
-            style="background-image: url('/img/header-1.jpg'); background-size: auto;">
+        <div class="image" style="background-image: url('/img/header-1.jpg'); background-size: auto;"></div>
+        <div class="container">
+            <div class="content">
+                <div class="login-title-area show-title-area">
+                    <p class="title-modern">In category: <%= service.category.category %></p>
+                    <p class="title-modern">From: <%= service.county.county %></p>
+                </div>
+            </div>
         </div>
-        </div>
-
     </div>
 </div>
-
 
 <div class="section">
     <div class="container">
@@ -21,10 +23,6 @@
                     <article class="blog-grid-itm__text">
                         <div class="card-info da-card-title">
                             <p class="da-text-title"><%= service.title %></p>
-                        </div>
-                        <div class="card-info">
-                            <p><%= service.category.category %></p>
-                            <p><%= service.county.county %></p>
                         </div>
                         <div class="da-cover">
                             <img src="<%= service.photos[0].src %>">

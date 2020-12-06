@@ -610,6 +610,23 @@ article a:hover {
   min-height: 70px;
 }
 
+.info-icon a {
+  opacity: 1 !important;
+}
+
+.info-icon a .text-danger {
+  color: #1c71c7 !important;
+}
+
+.show-title-area {
+  max-width: 1170px !important;
+  text-align: left !important;
+}
+
+.card img {
+  width: 100%;
+}
+
 @media (max-width: 768px) {
   .fac-card .da-card-info .da-rating {
     margin: 10px;
